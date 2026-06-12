@@ -1,0 +1,181 @@
+﻿{
+    "value":  [
+                  {
+                      "name":  ".editorconfig",
+                      "path":  ".editorconfig",
+                      "sha":  "39f48d95fa875a121fff724c692f48c6d2cbe1fb",
+                      "size":  302,
+                      "url":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/contents/.editorconfig?ref=main",
+                      "html_url":  "https://github.com/fahrybumigora/pweb-tugas-3/blob/main/.editorconfig",
+                      "git_url":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/git/blobs/39f48d95fa875a121fff724c692f48c6d2cbe1fb",
+                      "download_url":  "https://raw.githubusercontent.com/fahrybumigora/pweb-tugas-3/main/.editorconfig",
+                      "type":  "file",
+                      "_links":  {
+                                     "self":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/contents/.editorconfig?ref=main",
+                                     "git":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/git/blobs/39f48d95fa875a121fff724c692f48c6d2cbe1fb",
+                                     "html":  "https://github.com/fahrybumigora/pweb-tugas-3/blob/main/.editorconfig"
+                                 }
+                  },
+                  {
+                      "name":  ".gitignore",
+                      "path":  ".gitignore",
+                      "sha":  "e43b0f988953ae3a84b00331d0ccf5f7d51cb3cf",
+                      "size":  10,
+                      "url":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/contents/.gitignore?ref=main",
+                      "html_url":  "https://github.com/fahrybumigora/pweb-tugas-3/blob/main/.gitignore",
+                      "git_url":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/git/blobs/e43b0f988953ae3a84b00331d0ccf5f7d51cb3cf",
+                      "download_url":  "https://raw.githubusercontent.com/fahrybumigora/pweb-tugas-3/main/.gitignore",
+                      "type":  "file",
+                      "_links":  {
+                                     "self":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/contents/.gitignore?ref=main",
+                                     "git":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/git/blobs/e43b0f988953ae3a84b00331d0ccf5f7d51cb3cf",
+                                     "html":  "https://github.com/fahrybumigora/pweb-tugas-3/blob/main/.gitignore"
+                                 }
+                  },
+                  {
+                      "name":  ".htaccess",
+                      "path":  ".htaccess",
+                      "sha":  "9e25198b5a4aad8a2399f162f7c2a40e77090aea",
+                      "size":  124,
+                      "url":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/contents/.htaccess?ref=main",
+                      "html_url":  "https://github.com/fahrybumigora/pweb-tugas-3/blob/main/.htaccess",
+                      "git_url":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/git/blobs/9e25198b5a4aad8a2399f162f7c2a40e77090aea",
+                      "download_url":  "https://raw.githubusercontent.com/fahrybumigora/pweb-tugas-3/main/.htaccess",
+                      "type":  "file",
+                      "_links":  {
+                                     "self":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/contents/.htaccess?ref=main",
+                                     "git":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/git/blobs/9e25198b5a4aad8a2399f162f7c2a40e77090aea",
+                                     "html":  "https://github.com/fahrybumigora/pweb-tugas-3/blob/main/.htaccess"
+                                 }
+                  },
+                  {
+                      "name":  "application",
+                      "path":  "application",
+                      "sha":  "62124864832585eaccd920e5861a5d03d9cb67b9",
+                      "size":  0,
+                      "url":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/contents/application?ref=main",
+                      "html_url":  "https://github.com/fahrybumigora/pweb-tugas-3/tree/main/application",
+                      "git_url":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/git/trees/62124864832585eaccd920e5861a5d03d9cb67b9",
+                      "download_url":  null,
+                      "type":  "dir",
+                      "_links":  {
+                                     "self":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/contents/application?ref=main",
+                                     "git":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/git/trees/62124864832585eaccd920e5861a5d03d9cb67b9",
+                                     "html":  "https://github.com/fahrybumigora/pweb-tugas-3/tree/main/application"
+                                 }
+                  },
+                  {
+                      "name":  "composer.json",
+                      "path":  "composer.json",
+                      "sha":  "01e65f40f454eab3e093a1eb13b78e5a0e9b0512",
+                      "size":  1026,
+                      "url":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/contents/composer.json?ref=main",
+                      "html_url":  "https://github.com/fahrybumigora/pweb-tugas-3/blob/main/composer.json",
+                      "git_url":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/git/blobs/01e65f40f454eab3e093a1eb13b78e5a0e9b0512",
+                      "download_url":  "https://raw.githubusercontent.com/fahrybumigora/pweb-tugas-3/main/composer.json",
+                      "type":  "file",
+                      "_links":  {
+                                     "self":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/contents/composer.json?ref=main",
+                                     "git":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/git/blobs/01e65f40f454eab3e093a1eb13b78e5a0e9b0512",
+                                     "html":  "https://github.com/fahrybumigora/pweb-tugas-3/blob/main/composer.json"
+                                 }
+                  },
+                  {
+                      "name":  "index.php",
+                      "path":  "index.php",
+                      "sha":  "11f8c62814e4dadb34c6b68c611ce3c7cc961fcd",
+                      "size":  10255,
+                      "url":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/contents/index.php?ref=main",
+                      "html_url":  "https://github.com/fahrybumigora/pweb-tugas-3/blob/main/index.php",
+                      "git_url":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/git/blobs/11f8c62814e4dadb34c6b68c611ce3c7cc961fcd",
+                      "download_url":  "https://raw.githubusercontent.com/fahrybumigora/pweb-tugas-3/main/index.php",
+                      "type":  "file",
+                      "_links":  {
+                                     "self":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/contents/index.php?ref=main",
+                                     "git":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/git/blobs/11f8c62814e4dadb34c6b68c611ce3c7cc961fcd",
+                                     "html":  "https://github.com/fahrybumigora/pweb-tugas-3/blob/main/index.php"
+                                 }
+                  },
+                  {
+                      "name":  "instruksi-tugas-3.md",
+                      "path":  "instruksi-tugas-3.md",
+                      "sha":  "a8b0a53421f4623fddb023a4c2055e9a09c4d1bf",
+                      "size":  11568,
+                      "url":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/contents/instruksi-tugas-3.md?ref=main",
+                      "html_url":  "https://github.com/fahrybumigora/pweb-tugas-3/blob/main/instruksi-tugas-3.md",
+                      "git_url":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/git/blobs/a8b0a53421f4623fddb023a4c2055e9a09c4d1bf",
+                      "download_url":  "https://raw.githubusercontent.com/fahrybumigora/pweb-tugas-3/main/instruksi-tugas-3.md",
+                      "type":  "file",
+                      "_links":  {
+                                     "self":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/contents/instruksi-tugas-3.md?ref=main",
+                                     "git":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/git/blobs/a8b0a53421f4623fddb023a4c2055e9a09c4d1bf",
+                                     "html":  "https://github.com/fahrybumigora/pweb-tugas-3/blob/main/instruksi-tugas-3.md"
+                                 }
+                  },
+                  {
+                      "name":  "license.txt",
+                      "path":  "license.txt",
+                      "sha":  "82be622d945cad2f73301d2e9f13a48ee5187302",
+                      "size":  1097,
+                      "url":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/contents/license.txt?ref=main",
+                      "html_url":  "https://github.com/fahrybumigora/pweb-tugas-3/blob/main/license.txt",
+                      "git_url":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/git/blobs/82be622d945cad2f73301d2e9f13a48ee5187302",
+                      "download_url":  "https://raw.githubusercontent.com/fahrybumigora/pweb-tugas-3/main/license.txt",
+                      "type":  "file",
+                      "_links":  {
+                                     "self":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/contents/license.txt?ref=main",
+                                     "git":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/git/blobs/82be622d945cad2f73301d2e9f13a48ee5187302",
+                                     "html":  "https://github.com/fahrybumigora/pweb-tugas-3/blob/main/license.txt"
+                                 }
+                  },
+                  {
+                      "name":  "readme.rst",
+                      "path":  "readme.rst",
+                      "sha":  "63a55c3f46ef7b9589ead511c3a3f2cde0196fb7",
+                      "size":  2438,
+                      "url":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/contents/readme.rst?ref=main",
+                      "html_url":  "https://github.com/fahrybumigora/pweb-tugas-3/blob/main/readme.rst",
+                      "git_url":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/git/blobs/63a55c3f46ef7b9589ead511c3a3f2cde0196fb7",
+                      "download_url":  "https://raw.githubusercontent.com/fahrybumigora/pweb-tugas-3/main/readme.rst",
+                      "type":  "file",
+                      "_links":  {
+                                     "self":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/contents/readme.rst?ref=main",
+                                     "git":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/git/blobs/63a55c3f46ef7b9589ead511c3a3f2cde0196fb7",
+                                     "html":  "https://github.com/fahrybumigora/pweb-tugas-3/blob/main/readme.rst"
+                                 }
+                  },
+                  {
+                      "name":  "system",
+                      "path":  "system",
+                      "sha":  "648d77b5c521cec50415cd9b42b12744283c4f0a",
+                      "size":  0,
+                      "url":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/contents/system?ref=main",
+                      "html_url":  "https://github.com/fahrybumigora/pweb-tugas-3/tree/main/system",
+                      "git_url":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/git/trees/648d77b5c521cec50415cd9b42b12744283c4f0a",
+                      "download_url":  null,
+                      "type":  "dir",
+                      "_links":  {
+                                     "self":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/contents/system?ref=main",
+                                     "git":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/git/trees/648d77b5c521cec50415cd9b42b12744283c4f0a",
+                                     "html":  "https://github.com/fahrybumigora/pweb-tugas-3/tree/main/system"
+                                 }
+                  },
+                  {
+                      "name":  "tugas-3.sql",
+                      "path":  "tugas-3.sql",
+                      "sha":  "c823a767f6300640997fa83e94762cb3d9b34fe2",
+                      "size":  1746,
+                      "url":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/contents/tugas-3.sql?ref=main",
+                      "html_url":  "https://github.com/fahrybumigora/pweb-tugas-3/blob/main/tugas-3.sql",
+                      "git_url":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/git/blobs/c823a767f6300640997fa83e94762cb3d9b34fe2",
+                      "download_url":  "https://raw.githubusercontent.com/fahrybumigora/pweb-tugas-3/main/tugas-3.sql",
+                      "type":  "file",
+                      "_links":  {
+                                     "self":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/contents/tugas-3.sql?ref=main",
+                                     "git":  "https://api.github.com/repos/fahrybumigora/pweb-tugas-3/git/blobs/c823a767f6300640997fa83e94762cb3d9b34fe2",
+                                     "html":  "https://github.com/fahrybumigora/pweb-tugas-3/blob/main/tugas-3.sql"
+                                 }
+                  }
+              ],
+    "Count":  11
+}

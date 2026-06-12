@@ -14,57 +14,45 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-        $(document).ready(function () {
-            // DataTable
-            if ($('#datatable').length && $.fn.DataTable) {
-                if (!$.fn.dataTable.isDataTable('#datatable')) {
-                    $('#datatable').DataTable({
-                        responsive: true,
-                        pageLength: 10,
-                        language: {
-                            search: 'Cari:',
-                            lengthMenu: 'Tampilkan _MENU_ data',
-                            info: 'Menampilkan _START_ sampai _END_ dari _TOTAL_ data',
-                            infoEmpty: 'Tidak ada data yang ditampilkan',
-                            zeroRecords: 'Data tidak ditemukan',
-                            paginate: {
-                                previous: 'Sebelumnya',
-                                next: 'Berikutnya'
+        (function () {
+            var tableSelector = '#datatable';
+            var tableElement = document.querySelector(tableSelector);
+
+            if (window.jQuery && tableElement && jQuery.fn && jQuery.fn.DataTable) {
+                jQuery(function ($) {
+                    if (!$.fn.dataTable.isDataTable(tableSelector)) {
+                        $(tableSelector).DataTable({
+                            responsive: true,
+                            pageLength: 10,
+                            language: {
+                                search: 'Cari:',
+                                lengthMenu: 'Tampilkan _MENU_ data',
+                                info: 'Menampilkan _START_ sampai _END_ dari _TOTAL_ data',
+                                infoEmpty: 'Tidak ada data yang ditampilkan',
+                                zeroRecords: 'Data tidak ditemukan',
+                                paginate: {
+                                    previous: 'Sebelumnya',
+                                    next: 'Berikutnya'
+                                }
                             }
-                        }
-                    });
-                }
+                        });
+                    }
+                });
             }
 
-            // SweetAlert flashdata
-            <?php $swal = $this->session->flashdata('swal'); ?>
-            <?php if ($swal): ?>
-                Swal.fire({
-                    icon: '<?php echo $swal['icon']; ?>',
-                    title: '<?php echo $swal['title']; ?>',
-                    text: '<?php echo $swal['text']; ?>',
-                    confirmButtonColor: '#0d6efd'
-                });
-            <?php endif; ?>
+            document.addEventListener('click', function (event) {
+                var deleteButton = event.target.closest('.btn-hapus');
 
-            // Toggle password visibility
-            $(document).on('click', '.btn-toggle-password', function () {
-                var input = $(this).closest('.input-group').find('input');
-                var icon = $(this).find('i');
-
-                if (input.attr('type') === 'password') {
-                    input.attr('type', 'text');
-                    icon.removeClass('bi-eye').addClass('bi-eye-slash');
-                } else {
-                    input.attr('type', 'password');
-                    icon.removeClass('bi-eye-slash').addClass('bi-eye');
+                if (!deleteButton) {
+                    return;
                 }
-            });
 
-            // Konfirmasi hapus
-            $(document).on('click', '.btn-hapus', function (e) {
-                e.preventDefault();
-                var url = $(this).attr('href');
+                event.preventDefault();
+
+                if (typeof Swal === 'undefined') {
+                    window.location.href = deleteButton.getAttribute('href');
+                    return;
+                }
 
                 Swal.fire({
                     title: 'Hapus data ini?',
@@ -77,11 +65,58 @@
                     cancelButtonText: 'Batal'
                 }).then(function (result) {
                     if (result.isConfirmed) {
-                        window.location.href = url;
+                        window.location.href = deleteButton.getAttribute('href');
                     }
                 });
             });
+
+            // Password toggle functionality
+            document.addEventListener('click', function (event) {
+                var toggleButton = event.target.closest('.btn-toggle-password');
+                if (!toggleButton) {
+                    return;
+                }
+
+                var passwordInput = toggleButton.closest('.input-group').querySelector('input[type="password"], input[type="text"]');
+                if (!passwordInput) {
+                    return;
+                }
+
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    toggleButton.innerHTML = '<i class="bi bi-eye-slash"></i>';
+                } else {
+                    passwordInput.type = 'password';
+                    toggleButton.innerHTML = '<i class="bi bi-eye"></i>';
+                }
+            });
+        })();
+    </script>
+    <?php $swal = $this->session->flashdata('swal'); ?>
+    <?php if ($swal || $this->session->flashdata('success') || $this->session->flashdata('warning')): ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            <?php if ($swal): ?>
+                Swal.fire(<?php echo json_encode($swal) ?>);
+            <?php endif; ?>
+
+            <?php if ($this->session->flashdata('success')): ?>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Sukses',
+                    text: '<?php echo addslashes($this->session->flashdata('success')) ?>'
+                });
+            <?php endif; ?>
+
+            <?php if ($this->session->flashdata('warning')): ?>
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Perhatian',
+                    text: '<?php echo addslashes($this->session->flashdata('warning')) ?>'
+                });
+            <?php endif; ?>
         });
     </script>
+    <?php endif; ?>
 </body>
 </html>

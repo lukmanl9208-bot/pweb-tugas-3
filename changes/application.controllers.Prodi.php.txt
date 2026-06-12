@@ -1,0 +1,113 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Prodi extends CI_Controller {
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('ProdiModel');
+        $this->load->model('FakultasModel');
+        $this->load->helper(array('form', 'url'));
+        $this->load->library('form_validation');
+    }
+
+    public function index()
+    {
+        $data['title'] = 'Daftar Program Studi';
+        $data['prodi'] = $this->ProdiModel->get_all();
+        $this->load->view('layout/header', $data);
+        $this->load->view('prodi/index', $data);
+        $this->load->view('layout/footer', $data);
+    }
+
+    public function tambah()
+    {
+        $data['title'] = 'Tambah Program Studi';
+        $data['fakultas'] = $this->FakultasModel->get_all();
+
+        $this->form_validation->set_rules('prodi_name', 'Nama Program Studi', 'trim|required');
+        $this->form_validation->set_rules('fakultas_id', 'Fakultas', 'required');
+        $this->form_validation->set_rules('prodi_strata', 'Strata', 'required');
+
+        if ($this->form_validation->run() === FALSE) {
+            $this->load->view('layout/header', $data);
+            $this->load->view('prodi/form', $data);
+            $this->load->view('layout/footer', $data);
+            return;
+        }
+
+        $insert = [
+            'prodi_name' => $this->input->post('prodi_name', true),
+            'fakultas_id' => $this->input->post('fakultas_id', true),
+            'prodi_strata' => $this->input->post('prodi_strata', true)
+        ];
+
+        $this->ProdiModel->insert($insert);
+        $this->session->set_flashdata('success', 'Program Studi berhasil ditambahkan');
+        redirect('prodi');
+    }
+
+    public function ubah($id = null)
+    {
+        if (!$id) {
+            $this->session->set_flashdata('warning', 'Data tidak ditemukan');
+            redirect('prodi');
+            return;
+        }
+
+        $row = $this->ProdiModel->get($id);
+
+        if (!$row) {
+            $this->session->set_flashdata('warning', 'Data tidak ditemukan');
+            redirect('prodi');
+            return;
+        }
+
+        $data['title'] = 'Ubah Program Studi';
+        $data['row'] = $row;
+        $data['fakultas'] = $this->FakultasModel->get_all();
+
+        $this->form_validation->set_rules('prodi_name', 'Nama Program Studi', 'trim|required');
+        $this->form_validation->set_rules('fakultas_id', 'Fakultas', 'required');
+        $this->form_validation->set_rules('prodi_strata', 'Strata', 'required');
+
+        if ($this->form_validation->run() === FALSE) {
+            $this->load->view('layout/header', $data);
+            $this->load->view('prodi/form', $data);
+            $this->load->view('layout/footer', $data);
+            return;
+        }
+
+        $update = [
+            'prodi_name' => $this->input->post('prodi_name', true),
+            'fakultas_id' => $this->input->post('fakultas_id', true),
+            'prodi_strata' => $this->input->post('prodi_strata', true)
+        ];
+
+        $this->ProdiModel->update($id, $update);
+        $this->session->set_flashdata('success', 'Program Studi berhasil diubah');
+        redirect('prodi');
+    }
+
+    public function hapus($id = null)
+    {
+        if (!$id) {
+            $this->session->set_flashdata('warning', 'Data tidak ditemukan');
+            redirect('prodi');
+            return;
+        }
+
+        $row = $this->ProdiModel->get($id);
+
+        if (!$row) {
+            $this->session->set_flashdata('warning', 'Data tidak ditemukan');
+            redirect('prodi');
+            return;
+        }
+
+        $this->ProdiModel->delete($id);
+        $this->session->set_flashdata('warning', 'Program Studi berhasil dihapus');
+        redirect('prodi');
+    }
+}

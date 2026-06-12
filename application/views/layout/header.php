@@ -6,7 +6,6 @@
     <title>Dashboard - UTS Pemrograman Web</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
 
@@ -29,7 +28,7 @@
                         <a class="btn btn-light fw-semibold px-4" href="#">Profil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-light fw-semibold px-4" href="<?php echo base_url('auth/logout') ?>">Logout</a>
+                        <a class="btn btn-light fw-semibold px-4" href="#">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -50,17 +49,18 @@
             </div>
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link fs-6 <?php echo $this->uri->segment(1) == '' || $this->uri->segment(1) == 'dashboard' ? 'text-white fw-bold' : 'text-white-50'; ?>" href="<?php echo base_url() ?>">Dashboard</a>
+                    <a class="nav-link fs-6 <?php echo $this->uri->segment(1) === '' ? 'text-white' : 'text-white-50'; ?>" href="<?php echo base_url() ?>">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fs-6 <?php echo $this->uri->segment(1) == 'fakultas' ? 'text-white fw-bold' : 'text-white-50'; ?>" href="<?php echo base_url('fakultas') ?>">Fakultas</a>
+                    <a class="nav-link fs-6 <?php echo $this->uri->segment(1) === 'mahasiswa' && !$this->uri->segment(2) ? 'text-white fw-bold' : 'text-white-50'; ?>" href="<?php echo base_url('mahasiswa') ?>">Mahasiswa</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fs-6 <?php echo $this->uri->segment(1) == 'prodi' ? 'text-white fw-bold' : 'text-white-50'; ?>" href="<?php echo base_url('prodi') ?>">Program Studi</a>
+                    <a class="nav-link fs-6 <?php echo $this->uri->segment(1) === 'fakultas' ? 'text-white fw-bold' : 'text-white-50'; ?>" href="<?php echo base_url('fakultas') ?>">Fakultas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fs-6 <?php echo $this->uri->segment(1) == 'mahasiswa' ? 'text-white fw-bold' : 'text-white-50'; ?>" href="<?php echo base_url('mahasiswa') ?>">Mahasiswa</a>
+                    <a class="nav-link fs-6 <?php echo $this->uri->segment(1) === 'prodi' ? 'text-white fw-bold' : 'text-white-50'; ?>" href="<?php echo base_url('prodi') ?>">Program Studi</a>
                 </li>
+                <!-- Removed legacy Mahasiswa sub-pages (about/service/contact) to match assignment scope -->
             </ul>
         </div>
     </div>
@@ -81,13 +81,13 @@
                         <a class="nav-link fs-6 <?php echo $this->uri->segment(1) == '' || $this->uri->segment(1) == 'dashboard' ? 'text-white fw-bold' : 'text-white-50'; ?>" href="<?php echo base_url() ?>">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fs-6 <?php echo $this->uri->segment(1) == 'fakultas' ? 'text-white fw-bold' : 'text-white-50'; ?>" href="<?php echo base_url('fakultas') ?>">Fakultas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fs-6 <?php echo $this->uri->segment(1) == 'prodi' ? 'text-white fw-bold' : 'text-white-50'; ?>" href="<?php echo base_url('prodi') ?>">Program Studi</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link fs-6 <?php echo $this->uri->segment(1) == 'mahasiswa' ? 'text-white fw-bold' : 'text-white-50'; ?>" href="<?php echo base_url('mahasiswa') ?>">Mahasiswa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-6 <?php echo $this->uri->segment(1) === 'fakultas' ? 'text-white fw-bold' : 'text-white-50'; ?>" href="<?php echo base_url('fakultas') ?>">Fakultas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-6 <?php echo $this->uri->segment(1) === 'prodi' ? 'text-white fw-bold' : 'text-white-50'; ?>" href="<?php echo base_url('prodi') ?>">Program Studi</a>
                     </li>
                 </ul>
             </nav>

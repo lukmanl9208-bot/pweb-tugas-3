@@ -1,0 +1,67 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Install extends CI_Controller {
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->database();
+        $this->load->library('session');
+    }
+
+    // Run SQL file import from project root: tugas-3.sql
+    public function run()
+    {
+        $sqlFile = FCPATH . 'tugas-3.sql';
+
+        if (!file_exists($sqlFile)) {
+            $this->session->set_flashdata('warning', 'File tugas-3.sql tidak ditemukan di root proyek.');
+            redirect('/');
+            return;
+        }
+
+        // basic safety: check if tables already exist
+        $check = $this->db->query("SHOW TABLES LIKE 'fakultas'")->row_array();
+        if ($check) {
+            $this->session->set_flashdata('warning', 'Tabel sudah ada, import dibatalkan. Hapus tabel jika ingin mengimpor ulang.');
+            redirect('/');
+            return;
+        }
+
+        $sql = file_get_contents($sqlFile);
+
+        // remove comments starting with --
+        $lines = preg_split("/\r\n|\n|\r/", $sql);
+        $clean = [];
+        foreach ($lines as $line) {
+            $trim = trim($line);
+            if ($trim === '' || strpos($trim, '--') === 0) continue;
+            $clean[] = $line;
+        }
+
+        $sql = implode("\n", $clean);
+
+        // split statements by semicolon
+        $statements = array_filter(array_map('trim', explode(';', $sql)));
+
+        $errors = [];
+        foreach ($statements as $stmt) {
+            if ($stmt === '') continue;
+            // skip incomplete fragments
+            try {
+                $this->db->query($stmt);
+            } catch (Exception $e) {
+                $errors[] = $e->getMessage();
+            }
+        }
+
+        if (!empty($errors)) {
+            $this->session->set_flashdata('warning', 'Import selesai dengan beberapa error: ' . implode(' | ', array_slice($errors,0,5)));
+        } else {
+            $this->session->set_flashdata('success', 'Import tugas-3.sql selesai.');
+        }
+
+        redirect('/');
+    }
+}

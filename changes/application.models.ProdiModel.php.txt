@@ -1,0 +1,40 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class ProdiModel extends CI_Model {
+
+    protected $table = 'prodi';
+
+    public function get_all()
+    {
+        return $this->db->select('prodi.*, fakultas.fakultas_name as fakultas_name')
+            ->join('fakultas', 'fakultas.fakultas_id = prodi.fakultas_id', 'left')
+            ->order_by('prodi.prodi_id', 'ASC')
+            ->get($this->table)
+            ->result();
+    }
+
+    public function get($id)
+    {
+        return $this->db->where('prodi.prodi_id', $id)
+            ->select('prodi.*, fakultas.fakultas_name as fakultas_name')
+            ->join('fakultas', 'fakultas.fakultas_id = prodi.fakultas_id', 'left')
+            ->get($this->table)
+            ->row();
+    }
+
+    public function insert($data)
+    {
+        return $this->db->insert($this->table, $data);
+    }
+
+    public function update($id, $data)
+    {
+        return $this->db->where('prodi_id', $id)->update($this->table, $data);
+    }
+
+    public function delete($id)
+    {
+        return $this->db->where('prodi_id', $id)->delete($this->table);
+    }
+}
